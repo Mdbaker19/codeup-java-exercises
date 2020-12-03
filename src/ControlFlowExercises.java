@@ -10,6 +10,16 @@ public class ControlFlowExercises {
         return (char) g;
     }
 
+    public static String plusMinusNone(int a, char b){
+        if (a >= 8) {
+            return (b + "+");
+        } else if (a <= 3) {
+            return (b + "-");
+        } else {
+            return b + "";
+        }
+    }
+
 
     public static void main(String[] args) {
 //        int i = 5;
@@ -86,45 +96,13 @@ public class ControlFlowExercises {
             int tenth = Character.getNumericValue(format(grade));
 
             if (grade >= 90 && grade <= 100) {
-                if (tenth >= 8) {
-                    System.out.print("A");
-                    System.out.println("+");
-                } else if (tenth <= 3) {
-                    System.out.print("A");
-                    System.out.println("-");
-                } else {
-                    System.out.println("A");
-                }
+                System.out.println(plusMinusNone(tenth, 'A'));
             } else if (grade >= 80 && grade <= 89) {
-                if (tenth >= 8) {
-                    System.out.print("B");
-                    System.out.println("+");
-                } else if (tenth <= 3) {
-                    System.out.print("B");
-                    System.out.println("-");
-                } else {
-                    System.out.println("B");
-                }
+                System.out.println(plusMinusNone(tenth, 'B'));
             } else if (grade >= 70 && grade <= 79) {
-                if (tenth >= 8) {
-                    System.out.print("C");
-                    System.out.println("+");
-                } else if (tenth <= 3) {
-                    System.out.print("C");
-                    System.out.println("-");
-                } else {
-                    System.out.println("C");
-                }
+                System.out.println(plusMinusNone(tenth, 'C'));
             } else if (grade >= 60 && grade <= 69) {
-                if (tenth >= 8) {
-                    System.out.print("D");
-                    System.out.println("+");
-                } else if (tenth <= 3) {
-                    System.out.print("D");
-                    System.out.println("-");
-                } else {
-                    System.out.println("D");
-                }
+                System.out.println(plusMinusNone(tenth, 'D'));
             } else {
                 System.out.println("F");
             }
