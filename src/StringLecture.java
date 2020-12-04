@@ -2,6 +2,12 @@ public class StringLecture {
 
     public static void main(String[] args) {
 
+        /*Important String lesson concepts:
+  Strings are NOT a primitive type. They are a reference type.
+  Strings are immutable in Java; string manipulations will not alter original.
+  String values should NOT be compared using ‘==’.
+  */
+
 // ------ .equals(String anotherString)
 
 //        String one = "2";
