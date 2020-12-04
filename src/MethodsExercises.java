@@ -4,17 +4,42 @@ public class MethodsExercises {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
-        System.out.println(multRecursion(50000, 10000));
-        System.out.println(add(6, 9));
-        System.out.println(sub(9, 4));
-        System.out.println(mult(5, 6));
-        System.out.println(div(9, 3));
-        System.out.println(mod(25, 4));
-        System.out.println(multLoop(5, 6));
-        System.out.println(getInteger(1, 10, 8));
-        System.out.println(factorial(11));
-        // 16 is max return that is not negative
-        System.out.println(factorialR(16));
+//        recurHello(1);
+
+//        System.out.println(multRecursion(60, 14));
+//        System.out.println(add(6, 9));
+//        System.out.println(sub(9, 4));
+//        System.out.println(mult(5, 6));
+//        System.out.println(div(9, 3));
+//        System.out.println(mod(25, 4));
+//        System.out.println(multLoop(5, 6));
+//
+//        System.out.printf("Enter a number to find it's factorial(there is a maximum of 16)%n");
+//        int factInt = sc.nextInt();
+//        if(factInt > 16){
+//            System.out.println("Invalid, number too high for accurate calculation");
+//        } else {
+//            System.out.println(factorial(factInt));
+//        }
+//
+//
+//
+//
+//
+//
+//        System.out.printf("Enter a number between 1 and 10%n");
+//        int intInput = sc.nextInt();
+//        while(!getInteger(1, 10, intInput)){
+//            System.out.println("Invalid");
+//            System.out.printf("Enter a number between 1 and 10%n");
+//            intInput = sc.nextInt();
+//        }
+//        System.out.println("Thank you, that number is valid");
+
+
+
+
+
     }
 
     public static int add(int x, int y){
@@ -51,9 +76,18 @@ public class MethodsExercises {
         }
     }
 
+    public static void sayHello(){
+        System.out.println("hello");
+    }
 
-
-
+    public static void recurHello(int x){
+        if(x >=8562){
+            return;
+        } else {
+            sayHello();
+            recurHello(x + 1);
+        }
+    }
 
 
 
