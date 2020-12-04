@@ -1,0 +1,73 @@
+What is a Java method?
+Methods are a sequence of statements that perform a specific task.
+They are analogous to functions in JavaScript, and like JavaScript functions,
+they commonly accept input, and produce output.
+
+
+Why use additional methods rather than writing all Java code in a main method?
+Provides an easier to read, more well formatted code
+
+
+What does it mean to ‘call’ or ‘invoke’ a method?
+run the code in the method
+
+
+What are six parts of a method definition as explained in the curriculum?
+public static String sayHello(String name){
+
+}
+
+
+public -- this is the visibility modifier.
+
+This defines whether or not other classes can see this method. For now, just put public here.
+
+static -- the presence of this keyword defines that the method belongs to the class, as opposed to instances of it.
+
+For now, we will define all of our methods as static. We'll explore this concept in more detail in the next lesson.
+
+String -- this is the return type of the method.
+
+In Java, all methods must define the type of the value they will return. If a method does not return anything, the special keyword void is used here.
+
+If a method defines a return type, it must have a return statement. It is a compile time error for a method that defines a return type to not return anything, or to return a value of a type other than the one that is specified.
+
+If a method's return type is void, it is a compile time error to return anything inside of the method; however, methods with a void return type can still use the return keyword to exit the method early.
+
+sayHello -- the name of the method.
+
+Method names follow the same rules as variable names.
+
+(String name) -- the parameter the method accepts.
+
+A method can be defined with no parameters, one parameter (like in our example), or multiple parameters (separated by commas). A type must be specified for each parameter.
+
+Everything inside the curly braces is the body of the method.
+
+
+In what ways do Java methods differ from JS functions?
+function declaration, return type of function needs to be specified in declaration as well as
+data type in parameter
+
+
+What is a method signature?
+the function call : add(int x, int b)
+
+
+What is method overloading?
+creating multiple methods that do the same thing with different parameters of different data types
+called differently based on the parameter passed in
+
+
+Will changing the return type of a method overload it?
+
+
+
+What is recursion and what are the differences/pros/cons compared to iteration?
+recursion is a problem solving technique involving having a function call itself
+pros involve simpler syntax
+cons require an exit case
+
+
+What is a StackOverflowError?
+bad recursive call with an improper exit condition or too many calls to fulfill the condition
