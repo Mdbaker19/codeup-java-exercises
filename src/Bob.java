@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Bob {
 
     public static  String response(String q){
+        q = q.trim();
         if(q.equals("")){
             return "Fine. Be that way!";
         } else if(q.endsWith("!")){
