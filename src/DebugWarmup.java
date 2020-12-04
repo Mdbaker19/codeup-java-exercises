@@ -21,8 +21,9 @@ public class DebugWarmup {
         System.out.println("Welcome to 'PRINT THE VEGETABLE COUNT' app!\n");
         System.out.printf("How many vegetables do you have? %n");
         int count = sc.nextInt();
+        sc.nextLine();
         System.out.printf("What kind of vegetable? (use a singular noun, e.g. 'carrot' vs. 'carrots'): %n");
-        String veggie = sc.next();
+        String veggie = sc.nextLine();
         System.out.printf("You have %d %ss!\n\n", count, veggie);
     }
 }
