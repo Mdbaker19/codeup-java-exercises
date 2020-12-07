@@ -5,6 +5,8 @@ public class MethodsExercises {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
+        getInteger(1, 10);
+
 //        recurHello(1);
 
 //        System.out.println(multRecursion(60, 14));
@@ -28,40 +30,30 @@ public class MethodsExercises {
 
 
 
-//        System.out.printf("Enter a number between 1 and 10%n");
-//        int intInput = sc.nextInt();
-//        while(!getInteger(1, 10, intInput)){
-//            System.out.println("Invalid");
-//            System.out.printf("Enter a number between 1 and 10%n");
-//            intInput = sc.nextInt();
+//        boolean rollAgain = false;
+//        System.out.println("Would you like to roll some dice? [Y]es");
+//        String choice = sc.next();
+//        if(choice.equalsIgnoreCase("Y")){
+//            rollAgain = true;
+//        } else {
+//            rollAgain = false;
 //        }
-//        System.out.println("Thank you, that number is valid");
-
-
-        boolean rollAgain = false;
-        System.out.println("Would you like to roll some dice? [Y]es");
-        String choice = sc.next();
-        if(choice.equalsIgnoreCase("Y")){
-            rollAgain = true;
-        } else {
-            rollAgain = false;
-        }
-        while(rollAgain) {
-            System.out.println("Let's create a dice, how many sides?");
-            int sides = sc.nextInt();
-            System.out.println("Enter any character to roll the dice");
-            for (int i = 1; i < 3; i++) {
-                int ran = (int) (Math.random() * sides) + 1;
-                System.out.printf("Dice %d landed on: %d%n", i, ran);
-            }
-            System.out.println("Would you like to roll some dice? [Y]es");
-            String again = sc.next();
-            if(again.equalsIgnoreCase("Y")){
-                rollAgain = true;
-            } else {
-                rollAgain = false;
-            }
-        }
+//        while(rollAgain) {
+//            System.out.println("Let's create a dice, how many sides?");
+//            int sides = sc.nextInt();
+//            System.out.println("Enter any character to roll the dice");
+//            for (int i = 1; i < 3; i++) {
+//                int ran = (int) (Math.random() * sides) + 1;
+//                System.out.printf("Dice %d landed on: %d%n", i, ran);
+//            }
+//            System.out.println("Would you like to roll some dice? [Y]es");
+//            String again = sc.next();
+//            if(again.equalsIgnoreCase("Y")){
+//                rollAgain = true;
+//            } else {
+//                rollAgain = false;
+//            }
+//        }
 
 
 
@@ -80,6 +72,19 @@ public class MethodsExercises {
 
 
 
+
+    public static int getInteger(int min, int max){
+        Scanner sc = new Scanner(System.in);
+        System.out.printf("Enter a number between 1 and 10%n");
+        int intInput = sc.nextInt();
+        if(intInput < min || intInput > max){
+            System.out.printf("Invalid number, not within range %d and %d", min, max);
+            return getInteger(min, max);
+        } else{
+            System.out.printf("%d is valid, thank you", intInput);
+            return intInput;
+        }
+    }
 
 
 
