@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.Math;
 
 public class MethodsExercises {
     public static void main(String[] args){
@@ -14,19 +15,19 @@ public class MethodsExercises {
 //        System.out.println(mod(25, 4));
 //        System.out.println(multLoop(5, 6));
 //
-//        System.out.printf("Enter a number to find it's factorial(there is a maximum of 16)%n");
+//        System.out.printf("Enter a number to find it's factorial(there is a maximum of 20)%n");
 //        int factInt = sc.nextInt();
-//        if(factInt > 16){
+//        if(factInt > 20){
 //            System.out.println("Invalid, number too high for accurate calculation");
 //        } else {
 //            System.out.println(factorial(factInt));
 //        }
-//
-//
-//
-//
-//
-//
+
+
+
+
+
+
 //        System.out.printf("Enter a number between 1 and 10%n");
 //        int intInput = sc.nextInt();
 //        while(!getInteger(1, 10, intInput)){
@@ -37,10 +38,51 @@ public class MethodsExercises {
 //        System.out.println("Thank you, that number is valid");
 
 
+        boolean rollAgain = false;
+        System.out.println("Would you like to roll some dice? [Y]es");
+        String choice = sc.next();
+        if(choice.equalsIgnoreCase("Y")){
+            rollAgain = true;
+        } else {
+            rollAgain = false;
+        }
+        while(rollAgain) {
+            System.out.println("Let's create a dice, how many sides?");
+            int sides = sc.nextInt();
+            System.out.println("Enter any character to roll the dice");
+            for (int i = 1; i < 3; i++) {
+                int ran = (int) (Math.random() * sides) + 1;
+                System.out.printf("Dice %d landed on: %d%n", i, ran);
+            }
+            System.out.println("Would you like to roll some dice? [Y]es");
+            String again = sc.next();
+            if(again.equalsIgnoreCase("Y")){
+                rollAgain = true;
+            } else {
+                rollAgain = false;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
     }
+
+
+
+
+
+
 
     public static int add(int x, int y){
         return x + y;
@@ -108,8 +150,8 @@ public class MethodsExercises {
 
 
 
-    public static int factorial(int f){
-        for(int i = f - 1; i > 0; i--){
+    public static long factorial(long f){
+        for(long i = f - 1; i > 0; i--){
             f *= i;
         }
         return f;
@@ -117,7 +159,7 @@ public class MethodsExercises {
 
 
 
-    public static int factorialR(int f){
+    public static long factorialR(long f){
         if(f == 1){
             return 1;
         } else {
