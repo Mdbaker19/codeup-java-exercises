@@ -41,7 +41,6 @@ public class MethodsExercises {
 //        while(rollAgain) {
 //            System.out.println("Let's create a dice, how many sides?");
 //            int sides = sc.nextInt();
-//            System.out.println("Enter any character to roll the dice");
 //            for (int i = 1; i < 3; i++) {
 //                int ran = (int) (Math.random() * sides) + 1;
 //                System.out.printf("Dice %d landed on: %d%n", i, ran);
