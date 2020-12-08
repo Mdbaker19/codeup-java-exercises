@@ -7,9 +7,15 @@ public class OopLecture {
         // ======================== slide 3 (classes and objects)
 //
         Person p1 = new Person();
-//            p1.firstName = "Justin";
-//            p1.lastName = "Reich";
+            p1.firstName = "Justin";
+            p1.lastName = "Reich";
         System.out.println(p1.lastName);
+        System.out.println(p1.sayHello());
+
+
+        Dog nemo = new Dog();
+        nemo.name = "Nemo";
+        nemo.callForDog("nemo");
 
 //            Person p2 = new Person();
 //            p2.firstName = "Justin";
@@ -81,6 +87,11 @@ public class OopLecture {
 //            System.out.println(Arithmetic.multiply(5, 5));
 
         // -- DogHelper Example --
+
+
+//        System.out.println(DogHelper.humanToDogYears(6));
+
+
 
 
 
