@@ -1,0 +1,83 @@
+================================= OOP PRE-LECTURE RESEARCH QUESTIONS
+---------------------------------------------------------------------
+
+
+========What is the difference between static and instance methods/variables?=========
+INSTANCE METHODS ARE THOSE THAT BELONG TO THE OBJECT
+    PROPERTIES DEFINED THROUGH PERSON rick = new PERSON();
+            RICK.FIRSTNAME = ....
+
+
+STATIC BELONG TO THE CLASS AS A WHOLE AND ARE ACCESSIBLE THROUGH THE CLASS ITSELF WITHOUT CREATING AN INSTANCE OF THE CLASS
+
+
+
+=======What is an instance and what is instantiation?========
+
+INSTANTIATION IS THE CREATION OF A NEW OBJECT FROM THE CLASS WITH "NEW"
+
+INSTANCE IS THE CREATION OF A PROPERTY IN THE GENERAL CLASS FOR THE OBJECT
+    class Person {
+        public String name;
+    }
+
+
+============What is an object in Java?============
+
+
+Object - a single location in memory having *state* and *behavior* specified by `properties` and `methods`. Think about software objects in terms of the *nouns* and *verbs* of real business processes.
+
+AN INSTANCE OF A CLASS, HAS PROPERTIES AND METHODS AND ARE INSTANTIATED WITH THE "NEW" KEYWORD
+
+PERSON rick = NEW PERSON();
+
+
+
+============What is a class in Java?============
+    USED TO DEFINE A CUSTOM TYPE IN JAVA
+        A TEMPLATE / BLUE PRINT FOR AN OBJECT TO BE BASED ON UPON CREATION
+
+
+
+============What is the difference between a class and an object?============
+ CLASS IS THE BLUEPRINT FOR THE OBJECT TO BE CREATED OFF OF
+ THE OBJECT IS THE INSTANCE OF THE CLASS CREATED BASED OFF IT'S SET OF TEMPLATE PROPERTIES
+
+
+
+============What is a constructor?============
+A SPECIAL METHOD CALLED TO CREATE AN OBJECT
+CAN BE OVERLOADED AND ACCEPT ARGUMENTS
+CALLED WHEN USED WITH THE 'NEW' KEYWORD FROM A CLASS WHEN CREATING AN OBJECT
+
+
+
+============What are some additional uses of the ‘final’ keyword?============
+
+WITH CLASSES IT PREVENTS INHERITANCE
+ON METHODS IT PREVENTS OVERLOADING
+VARIABLES IT PREVENTS CHANGE OR MODIFYING
+
+
+
+============What are some uses of the ‘this’ keyword?============
+PROVIDED WAY TO REFER TO THE CURRENT INSTANCE OBJECT THAT A CLASS IS DEFINING IN IT'S "BLUEPRINTS"
+    USED IN AN INSTANCE METHOD
+
+
+
+============What are visibility modifiers?============
+
+PUBLIC AND PRIVATE
+PRIVATE DEFINES THE VISIBILITY OF A VARIABLE IN THE CLASS, WHEN USED, REQUIRES A METHOD TO ALLOW
+ACCESS TO THE INFORMATION IN THE PRIVATE PROPERTY
+
+
+============Why use private visibility?============
+
+ENCAPSULATION => PREVENT EXTERNAL CODE FROM BEING CONCERNED WITH THE INTERNAL WORKINGS OF AN OBJECT
+
+
+
+
+

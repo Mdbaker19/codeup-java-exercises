@@ -1,0 +1,114 @@
+================================= WARM UP (15 minutes)
+With your breakout roommates, consider the following steps to create a peanut butter and jelly sandwich.
+
+1. Get peanut butter jar and jelly jar and bread bag from the pantry and set them on the table
+
+Plate : {
+type: utility
+action: [ pick up, put away, place on table, holds ]
+}
+Pantry : storage
+
+
+ Peanut butter ={
+  type: food
+  action: [ get, open, place it, scoop out content, close],
+  material: plastic
+  version: crunchy, creamy, home made
+ }
+
+
+   Bread : food
+
+   Sandwich {
+    pb,
+    jelly,
+    bread
+   }
+
+
+  Fridge: {
+  type : storage
+  action: [open, close, cools]
+  }
+
+  Jelly {
+   type: food
+     action: [ get, open, place it, scoop out content, close]
+  }
+
+    Table
+    Kitchen sink
+     Knifes:  {
+     type: utensil
+     action: [ pick up, use, wash ]
+     }
+      Cabinets: {
+      type: stroage
+      action: [open, close]
+      }
+
+
+2. Get plate and two knifes and from kitchen cabinets and set them on the table
+
+
+
+
+3. Open the peanut butter and jelly jars and the bread bag
+
+
+
+
+4. Put two slices of bread next to one another on the plate
+
+
+
+
+5. Use one knife to extract peanut butter and spread evenly on one slice of bread
+
+
+
+
+6. Use other knife to extract and spread jelly evenly to other slice of bread
+
+
+
+
+7. Join two slices of bread to each other with with spread sides of bread touching
+
+
+
+
+8. Close the peanut butter and jelly jars and bread bag
+
+
+
+
+9. Put knifes in kitchen sink
+
+
+
+
+10. Put away peanut butter and jelly jars and bread bag in the pantry
+
+
+
+
+11. Eat the sandwich
+
+
+
+
+
+List all unique nouns (things) involved in these steps
+List the categories of nouns / groups of things from these steps
+Consider the Peanut Butter Jar:
+  - list all actions that involve the peanut butter jar
+  - list all characteristics / types of relevant data concerning the peanut butter jar
+
+
+
+
+
+
+
