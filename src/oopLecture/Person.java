@@ -16,9 +16,9 @@ public class Person {
 //        public String lastName;
 //
 //        // instance method
-//        public String sayHello() {
-//                return lastName + ", " + firstName + " says hi!";
-//        }
+        public String sayHello() {
+                return lastName + ", " + firstName + " says hi!";
+        }
 
 
     // SLIDE 7
