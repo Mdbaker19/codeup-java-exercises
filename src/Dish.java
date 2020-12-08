@@ -1,9 +1,10 @@
 public class Dish {
-    public int costInCents;
+    public double costInCents;
     public String nameOfDish;
     public boolean wouldRecommend;
 
+
     public void printSummary(){
-        System.out.printf("Cost: %d, Name: %s, Recommend: %s", costInCents, nameOfDish, wouldRecommend);
+        System.out.printf("Cost: %f, Name: %s, Recommend: %s", costInCents, nameOfDish, wouldRecommend);
     }
 }
