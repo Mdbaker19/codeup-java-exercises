@@ -10,13 +10,37 @@ public class Input {
         System.out.println("Enter some text");
         return sc.next();
     }
+    public String getString(String input){
+        System.out.println(input);
+        System.out.println("Enter some text");
+        return sc.next();
+    }
+
+
 
     public boolean yesNo(){
         System.out.println("Enter [y], [Y], [yes] or [Yes]");
         return (sc.next().equalsIgnoreCase("Y") || sc.next().equalsIgnoreCase("yes"));
     }
+    public boolean yesNo(String input){
+        System.out.println(input);
+        System.out.println("Enter [y], [Y], [yes] or [Yes]");
+        return (sc.next().equalsIgnoreCase("Y") || sc.next().equalsIgnoreCase("yes"));
+    }
+
+
 
     public int getInt(int min, int max){
+        int currInput = getInt();
+        if(currInput > max || currInput < min){
+            System.out.println("Not within range");
+            return getInt(min, max);
+        }
+        System.out.println("Valid");
+        return currInput;
+    }
+    public int getInt(int min, int max, String input){
+        System.out.println(input);
         int currInput = getInt();
         if(currInput > max || currInput < min){
             System.out.println("Not within range");
@@ -31,7 +55,19 @@ public class Input {
         return sc.nextInt();
     }
 
+
+
     public double getDouble(double min, double max){
+        double currDouble = getDouble();
+        if(currDouble > max || currDouble < min){
+            System.out.println("Not within range");
+            return getDouble(min, max);
+        }
+        System.out.println("Valid");
+        return currDouble;
+    }
+    public double getDouble(double min, double max, String input){
+        System.out.println(input);
         double currDouble = getDouble();
         if(currDouble > max || currDouble < min){
             System.out.println("Not within range");
