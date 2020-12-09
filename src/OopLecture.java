@@ -3,19 +3,19 @@ public class OopLecture {
     public static void main(String[] args) {
 
         // ======================== slide 3 (classes and objects)
-
-            Person rick = new Person();
-            rick.firstName = "Rick";
-            rick.lastName = "Sanchez";
-            System.out.println(rick.firstName);
-            System.out.println(rick.lastName);
-            System.out.println(rick.show);
-
-
-            Person morty = new Person();
-            morty.firstName = "Morty";
-            morty.lastName = "Smith";
-            System.out.println(morty.show);
+//
+//            Person rick = new Person();
+//            rick.firstName = "Rick";
+//            rick.lastName = "Sanchez";
+//            System.out.println(rick.firstName);
+//            System.out.println(rick.lastName);
+//            System.out.println(rick.show);
+//
+//
+//            Person morty = new Person();
+//            morty.firstName = "Morty";
+//            morty.lastName = "Smith";
+//            System.out.println(morty.show);
 
 //            Person fred = new Person();
 //            fred.firstName = "Fred";
