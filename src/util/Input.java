@@ -4,7 +4,11 @@ import java.util.Scanner;
 
 public class Input {
 
-    private Scanner sc = new Scanner(System.in);
+    private Scanner sc;
+
+    public Input(){
+        this.sc = new Scanner (System.in);
+    }
 
     public String getString(){
         System.out.println("Enter some text");
@@ -19,13 +23,12 @@ public class Input {
 
 
     public boolean yesNo(){
-        System.out.println("Enter [y], [Y], [yes] or [Yes]");
-        return (sc.next().equalsIgnoreCase("Y") || sc.next().equalsIgnoreCase("yes"));
+        System.out.print("Enter [y], [Y], [yes] or [Yes]");
+        return (sc.next().trim().equalsIgnoreCase("Y") || sc.next().trim().equalsIgnoreCase("yes"));
     }
     public boolean yesNo(String input){
-        System.out.println(input);
-        System.out.println("Enter [y], [Y], [yes] or [Yes]");
-        return (sc.next().equalsIgnoreCase("Y") || sc.next().equalsIgnoreCase("yes"));
+        System.out.print(input);
+        return (sc.next().trim().equalsIgnoreCase("Y") || sc.next().trim().equalsIgnoreCase("yes"));
     }
 
 

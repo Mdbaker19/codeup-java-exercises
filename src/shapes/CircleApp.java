@@ -21,8 +21,7 @@ public class CircleApp {
 
             System.out.printf("Area of your circle with radius: %f, is %f%n", newRadius, circle.getArea());
             System.out.printf("Circumference of your circle with radius: %f, is %f%n", newRadius, circle.getCircumference());
-            System.out.printf("If you would like to create another circle %n");
-        }while(circleInput.yesNo());
+        }while(circleInput.yesNo("Would like to create another circle?  "));
         System.out.printf("Looks like you created %d Circle(s)", totalCircles);
 
     }
