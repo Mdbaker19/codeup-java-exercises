@@ -1,11 +1,14 @@
 package arraysLecture;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class ArraysLec {
 
     public static void main(String[] args) {
 
         /* ******************************************************** */
-        /* ********** USING PRIMITIVE AND REFERENCE TYPES  **********/
+        /* ********** USING PRIMITIVE AND REFERENCE TYPES ********* */
         /* ******************************************************** */
 
         // https://stackoverflow.com/questions/29140402/how-do-i-print-my-java-object-without-getting-sometype2f92e0f4
@@ -15,16 +18,30 @@ public class ArraysLec {
         // Int Example
         //Declare an int array variable and assign an int array with the length of 3 to the array variable nums
 
-//        int[] nums = new int[3];
+        int[] nums = new int[3];
+
+//        System.out.println(Arrays.toString(nums));
+//        System.out.println(nums);
+//        System.out.println("normal for loop");
+//        for(int i = 0; i < nums.length; i++){
+//            System.out.println(nums[i]);
+//        }
+//        System.out.println("enhanced for loop");
+//        for(int n : nums){
+//            System.out.println(n);
+//        }
 //
+//        String[] beatles = {"matt", "", "", "", "mandy"};
+//        System.out.println(Arrays.toString(beatles));
+
 //        nums[0] = 1; //Assign each index to an int variable
 //        nums[1] = 10;
 //        nums [2] = 12;
-//
+
 //        System.out.println(nums); //Type@HashcodeOfObject
-//
+
 //        System.out.println(Arrays.toString(nums)); //this is an Array method
-//
+
 //        for(int i = 0; i < nums.length; i++){
 //            System.out.println(nums[i]);
 //        }
@@ -36,8 +53,8 @@ public class ArraysLec {
 //        Dog d1 = new Dog("Bean", 1);
 //        Dog d2 = new Dog("Patch", 3);
 //        Dog d3 = new Dog("Rolo", 5);
-//
-//
+
+
 //        //Declaring a Dog array variable called dogs and creating a new Dog array with a length of 4
 //        Dog[] dogs = new Dog[4];
 //        dogs[0] = d1;
@@ -82,7 +99,7 @@ public class ArraysLec {
 //        languages[1] = "css";
 //        languages[2] = "javascript";
 //        languages[3] = "java";
-//
+
 //        System.out.println(Arrays.toString(languages));
 
 
@@ -122,31 +139,46 @@ public class ArraysLec {
         //TODO: Experiment with the following Array methods. Add a few comments explaining what is happening. Bonus: Create your own example.
 
 
-        // Example1:  Array.fill()
-
+//        // Example1:  Array.fill()
+//
 //        String[] testArray = new String[4];
 //
-//        Arrays.fill(testArray, "dogs");
+//        Arrays.fill(testArray,  "dogs");
 //        for (String element : testArray) {
-//            System.out.println(element);
+//            System.out.print(element + " ");
 //        }
-
-
-
-
-
-
-
-
-        // ***Example1: BONUS ***
+//        // fill the entire test array with a new value of "dogs". no index specified in function call "fill"
+//
+//
+//        System.out.println(" ");
+//
+//
+//
+//        // ***Example1: BONUS ***
 //        int[] numArray = {1,1,1,1,1,1,1,1,1,1};
 //
 //        Arrays.fill(numArray, 0, 4, 5);
 //        for (int element : numArray) {
-//            System.out.println(element);
+//            System.out.print(element + " ");
 //        }
+//        System.out.println(" ");
 
+        // fill is overloaded with more parameters, providing a starting index => 0 and an ending index (excluded index)
+        // to fill the array with the following value as the last parameter
 
+//        int[] testFiller = new int[100];
+//        for(int x : testFiller){
+//            x = 5;
+//            testFiller[x] = 5;
+//        }//=======> DOES NOT WORK LIKE I THOUGHT IT WOULD
+//        for(int i = 0; i < testFiller.length; i++){
+//            testFiller[i] = 5;
+//        }
+        //^^^^^^^ SAME AS => {
+//        Arrays.fill(testFiller, 0, testFiller.length-1, 5);
+        //^^^^^^^ SAME AS => {
+//        Arrays.fill(testFiller, 5);
+//        System.out.println(Arrays.toString(testFiller));
 
 
 
@@ -161,6 +193,21 @@ public class ArraysLec {
 //        String[] words2 = {"Mushroom", "mushroom"};
 //        System.out.println(Arrays.equals(words, words2));
 
+        String[] items = {"book", "fish", "table", "pencil", "dog", "glasses", "mouse", "key"};
+        String[] newItems = Arrays.copyOf(items, items.length + 5);
+        System.out.println(Arrays.toString(newItems));
+        System.out.println(newItems.length);
+        String[] compare = newItems.clone();
+        Arrays.fill(compare, compare.length - 5, compare.length, "up");
+
+        Arrays.fill(newItems, newItems.length - 5, newItems.length, "up");//==CHANGES THE COMPARE ARRAY SET EARLIER AS WELL / SWITCHED METHOD TO .CLONE()
+//        Arrays.sort(newItems, 0, items.length);
+        String arrayAsString = Arrays.toString(newItems);
+        System.out.println(arrayAsString);
+        System.out.println(Arrays.toString(compare));
+        System.out.println(Arrays.equals(newItems, compare));
+
+
 
 
 
@@ -174,7 +221,7 @@ public class ArraysLec {
 
 //        String[] badgerArray = new String[4];
 //        Arrays.fill(badgerArray, "Badgers");
-//
+
 //        String[] twoBadgers = Arrays.copyOf(badgerArray, 2);
 //        System.out.println(Arrays.toString(twoBadgers));
 
@@ -196,6 +243,11 @@ public class ArraysLec {
 //        Arrays.sort(animals);
 //        System.out.println(Arrays.toString(animals));
 
+//        String[] items = {"book", "fish", "table", "pencil", "dog", "glasses", "mouse", "key"};
+//        Arrays.sort(items, 1, items.length - 1);
+        // ^^^^^^^ SAME AS => {
+//        Arrays.sort(items);//"book" at index 0 is already in the correct spot as far as alphabetical sorting goes
+//        System.out.println(Arrays.toString(items));
 
 
 
@@ -208,22 +260,24 @@ public class ArraysLec {
         /* ******************************************************** */
 
 
-//        int[][] matrix = {
-//                {1, 2, 3},
-//                {4, 5, 6},
-//                {7, 8, 9}
-//        };
-//
-//
-//
+        int[][] matrix = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+
+
+
+
+
 //        // access the first element in the second row
 //        System.out.println(matrix[1][0]); // 4
-//
-//
+
+
 //        // the last element in the first row
 //        System.out.println(matrix[0][2]); // 3
-//
-//
+
+
 //        // the first element in the last row
 //        System.out.println(matrix[2][0]); // 7
 
