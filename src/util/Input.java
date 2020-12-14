@@ -57,6 +57,11 @@ public class Input {
         return sc.nextInt();
     }
 
+    public int getInt(String prompt){
+        System.out.println(prompt);
+        return sc.nextInt();
+    }
+
 
 
     public double getDouble(double min, double max){
