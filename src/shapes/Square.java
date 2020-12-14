@@ -2,7 +2,7 @@ package shapes;
 
 public class Square extends Rectangle{
 
-    public int side;
+    public int side;//===========NOT EVEN NEEDED, SIDE IS IMPLIED FROM THE LENGTH/WIDTH OF THE RECTANGLE
 
     public Square (int s){
         super(s, s);
