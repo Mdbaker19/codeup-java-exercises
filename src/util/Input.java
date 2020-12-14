@@ -11,7 +11,6 @@ public class Input {
     }
 
     public String getString(){
-        System.out.println("Enter text");
         return sc.next();
     }
     public String getString(String input){
