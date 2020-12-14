@@ -11,12 +11,12 @@ public class Input {
     }
 
     public String getString(){
-        System.out.println("Enter some text");
+        System.out.println("Enter text");
         return sc.next();
     }
     public String getString(String input){
         System.out.println(input);
-        System.out.println("Enter some text");
+        System.out.println("Enter text");
         return sc.next();
     }
 
