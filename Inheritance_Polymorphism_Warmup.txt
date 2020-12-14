@@ -1,0 +1,63 @@
+# Inheritance and Polymorphism Warmup
+
+### Group 1
+- What are the 4 pillars of OOP?
+- Define Inheritance in Java
+### Group 2
+- What are the benefits of an Object Oriented programming language?
+- What is a superclass? A subclass?
+### Group 3
+- What is the difference between a Class and an Object?
+- Does a subclass have access to a superclass method? What about the other way around?
+### Group 4
+- What is the difference between a Static and an Instance variable?
+- How does a subclass override a superclass method?
+- How can a subclass use the superclass implementation of a method after it has been overridden?
+### Group 5
+- What is a Constructor?
+- Define Polymorphism in Java
+### Group 6
+- What is meant by Class visibility?
+- What is the 'final' keyword?
+
+Within the next 30 minutes take time with your group to review these questions and be prepared to talk through the answers.
+
+Only one member needs to present to the class.
+
+Other members may assist in answering questions from the class.
+
+1--
+ABSTRACTION
+POLYMORPHISM
+INHERITANCE === CLASSES (SUBCLASSES) THAT EXTEND AND INHERIT A PARENT'S (SUPERCLASS) CLASSES AND CAN USE IT'S FUNCTIONALITY
+ENCAPSULATION == ACCESS MODIFIERS
+
+2--
+RE-USABILITY, CODE MAINTENANCE, ACCESS MODIFIERS, SECURITY THROUGH ENCAPSULATION,
+
+
+BEING ABLE TO USE THE COMMUNICATION OF OBJECTS TO SHARE METHODS, ONLY HAVING TO RIGHT SPECIFIC CODE ONE TIME AND ALLOWING OTHER
+CLASSES/OBJECTS TO PULL FROM THOSE METHODS THROUGH INHERITANCE
+HAVING OPTION TO OVERRIDE METHODS FOR SUBCLASSES
+PRIVATE, PUBLIC, PROTECTED
+SUPERCLASS IS THE PARENT CLASS THAT GIVES THE EXTENSION TO THE SUBCLASS THROUGH INHERITANCE
+SUBCLASS IS THE EXTENDED CLASS THAT TAKES ON THE INHERITED TRAITS AND METHODS OF IT'S PARENT SUPERCLASS
+
+3--
+CLASS IS A BLUEPRINT TO CREATE AN INSTANCE EXAMPLE OF AN OBJECT, CLASSES HAVE INSTANCE VARIABLES AND METHODS TO CONSTRUCT OBJECTS
+
+
+4--
+STATIC ARE DECLARED WITHIN A CLASS AND ACCESSIBLE WITHIN CLASS
+INSTANCE VARIABLES ARE ACCESSIBLE WITH INSTANCES OF THE CLASS AS AN OBJECT
+
+OVERRIDING DONE THROUGH METHODS WITH SAME PARAMETERS IN A SUBCLASS
+WITH THE "SUPER" KEYWORD
+
+5--
+POLYMORPHISM, FEATURE OF INHERITANCE
+
+6--
+
+USED TO PREVENT INHERITANCE AND OVERRIDING PREVENT REASSIGNMENT, CAN BE USED IN PARAMETERS FOR FUNCTIONS, CLASSES, VARIABLES
+ENCAPSULATION == ACCESS MODIFIERS

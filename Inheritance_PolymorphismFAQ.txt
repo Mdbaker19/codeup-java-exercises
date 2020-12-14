@@ -1,0 +1,109 @@
+# Inheritance and Polymorphism FAQ
+
+**What is inheritance in Java?**
+
+A class may have a direct parent class it extends/inherits instance fields from.
+
+**What's the point? Why program in this way?**
+
+It keeps your code clean and DRY. Imagine if you had 30 different classes
+representing different positions in a company. Many fields would be
+identical (contact information, an employer ID number, etc.). It
+would be much better to abstract away all identical fields in a more
+general class that all the positions inherit from, like an Employee
+class.
+
+**How are child and parent classes referred to?**
+
+A parent class may be referred to as a "superclass" or "base class"
+
+A child class may be referred to as a "subclass"
+
+
+**Can a class have more than one ancestor?**
+
+A class may extend from one and only one direct parent class.
+
+A class may extend from a class that in turn extends from another class, and may continue indefinitely (like a great great... grandparent).
+
+**What does the child/subclass inherit from the parent/superclass?**
+
+A child class inherits all instance fields from its' parent not marked private. Static fields are not inherited as they exist on the class. These static fields however can be accessed through the subclass instance/object.
+
+**Can the value of an instance field be changed in a subclass?**
+
+Yes it can be:
+
+	public class Dog {
+		public boolean isCute = false;
+	}
+
+	public class Pug {
+		public boolean isCute = true;
+	}
+
+**Is a subclass stuck with only what it inherits from its parent?**
+
+No! A subclass may add any number of fields. Additionally, unless a method is marked as final, a subclass may redefine the method (override it).
+
+**Is there a way to prevent a class from being extended?**
+
+Yes. A class may be marked as final which prevents it from being extended. Individual methods may also be marked as final to prevent overriding.
+
+**What is polymorphism in Java?**
+
+One thing, many forms...
+
+1. An object that may be of any type it extends or implements
+2. Static polymorphism (compile time): method overloading
+3. Dynamic polymorphism (run time): method overriding
+
+Note that the first example of polymorphism will likely be the most powerful and common example.
+
+**What's the point? Why should I care?**
+
+Code that accepts polymorphic types is more flexible. The advantages
+will be even more clear when working with Interfaces. Being able to
+focus on groupings of object behavior rather than on a specific
+object allow for greater flexibility and simpler code changes
+over time.
+
+Even if you don't directly write code often to recognize polymorphic
+types, you will encounter it frequently when working with web frameworks
+like Spring.
+
+**How can an object be of the type of its parent?**
+
+Well, if we have a Person superclass (parent class) and Bob is the subclass
+(child class), Bob is a Bob and Bob is a Person. The reverse is not always
+true (Person is a Bob).
+
+**Why would I ever want to declare an object of the type of a parent class?**
+
+If a method or some other part of your program only cares about state
+and or behavior specific to the parent, Person, for example, a method
+that takes in an object and souts out the name value, we want
+to pass other specific objects to it than just Bob. What about Cathy?
+Or Sally too? We can say the method accepts a more general type to
+accomplish this.
+
+**Can a method from a superclass (parent class) be overloaded in a subclass (child class)?**
+
+Yes
+
+**How do I know when to mark my fields as public or protected or package private or private?**
+
+Err on the side of most restrictive (private) and increase visibility as needed.
+
+**What does the "super" keyword do in a subclass?**
+
+"super" refers to the superclass (parent class). "super" may be used to invoke the superclass constructor in the subclass constructor.
+The super keyword	 may also be used in a subclass to invoke a superclass method that has been overridden by the subclass.
+
+
+Inheritance enables code re usability, minimize redundancies.
+
+methods that are available to the instantiated object depend on the type it was assigned to
+the implementation of the method depend on the object itself
+so what happens when the method is invoked is based on the object itself
+methods available depend on the type of object instantiation
