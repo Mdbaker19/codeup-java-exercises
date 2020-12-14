@@ -18,15 +18,8 @@ public class MoviesApplication {
         Movie[] allMovies = MoviesArray.findAll();
 
         do{
-            System.out.printf("0 - exit %n" +
-                    "1 - view all movies %n" +
-                    "2 - view movies in the animated category%n" +
-                    "3 - view movies in the drama category%n" +
-                    "4 - view movies in the horror category%n" +
-                    "5 - view movies in the scifi category%n" +
-                    "6 -- add a new movie%n");
-
-            int indexChoice = movieInput.getInt();
+            optionList();
+            int indexChoice = movieInput.getInt("Select an option");
 
             if (indexChoice == 0) {
                 keepSearching = false;
@@ -72,5 +65,15 @@ public class MoviesApplication {
         }
         System.out.println("You are viewing movies in the : " + genreChoice + " category");
         System.out.println(" ");
+    }
+
+    public static void optionList(){
+        System.out.printf("0 - exit %n" +
+                "1 - view all movies %n" +
+                "2 - view movies in the animated category%n" +
+                "3 - view movies in the drama category%n" +
+                "4 - view movies in the horror category%n" +
+                "5 - view movies in the scifi category%n" +
+                "6 -- add a new movie%n");
     }
 }
