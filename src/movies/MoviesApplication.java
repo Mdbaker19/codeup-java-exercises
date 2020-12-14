@@ -9,6 +9,8 @@ public class MoviesApplication {
         Input movieInput = new Input();
 
         boolean keepSearching = true;
+        boolean addedToTheList = false;
+        int addedMovieCounter = 0;
         String[] genres = {
             "", "all", "animated", "drama", "horror", "scifi"
         };
@@ -35,6 +37,8 @@ public class MoviesApplication {
                 }
                 System.out.println("You are viewing all movies");
                 System.out.println(" ");
+            } else if(indexChoice > 1 && indexChoice < 6) {
+                returnList(indexChoice, genres, allMovies);
             } else if(indexChoice == 6){
                 System.out.println("Enter The Movie Title");
                 String addMovieTitle = movieInput.getString();
@@ -44,11 +48,19 @@ public class MoviesApplication {
                 Movie[] movieArrWithAddedMovie = Arrays.copyOf(allMovies, allMovies.length + 1);
                 Arrays.fill(movieArrWithAddedMovie, movieArrWithAddedMovie.length - 1, movieArrWithAddedMovie.length, addedMovie);
                 System.out.println(" ");
-            } else if(indexChoice > 1 && indexChoice < 6) {
-                returnList(indexChoice, genres, allMovies);
+                allMovies = movieArrWithAddedMovie;
+                addedMovieCounter++;
+                addedToTheList = true;
             }
         }while(keepSearching);
+
+        if(addedToTheList){
+            System.out.printf("Thank you for adding %d movie(s) to my list", addedMovieCounter);
+        } else {
+            System.out.println("Thank you for viewing the movie list");
+        }
     }
+
 
     public static void returnList(int index, String[] genreList, Movie[] movieList){
         String genreChoice = genreList[index];
