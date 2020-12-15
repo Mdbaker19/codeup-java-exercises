@@ -1,6 +1,36 @@
 package shapes;
 
-public class Square extends Rectangle{
+public class Square extends Quadrilateral{
+
+
+
+    public Square(double side){
+        super(side, side);
+    }
+
+    @Override
+    public double getPerimeter() {
+        return this.length * 4;
+    }
+
+    @Override
+    public double getArea() {
+        return this.length * this.length;
+    }
+
+    @Override
+    public void setLength(double newL) {
+        this.length = newL;
+    }
+
+    @Override
+    public void setWidth(double newW) {
+        this.length = newW;
+    }
+}
+
+
+
 
 //    public int side;//===========NOT EVEN NEEDED, SIDE IS IMPLIED FROM THE LENGTH/WIDTH OF THE RECTANGLE
 //
@@ -24,4 +54,4 @@ public class Square extends Rectangle{
 //        // RECTANGLE CLASS AS LENGTH AND WIDTH???
 //    }
 
-}
+//}
