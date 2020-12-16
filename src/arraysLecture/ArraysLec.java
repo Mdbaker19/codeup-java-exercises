@@ -292,7 +292,7 @@ public class ArraysLec {
 
         //Remember that Arrays in Java are a less flexible data type than Arrays in JavaScript. This is why our Array methods are limited.
 
-        //ArrayLists in Java which we will experience later are more similar to Arrays we saw in JavaScript and allows for different functionality.
+        //collections.ArrayLists in Java which we will experience later are more similar to Arrays we saw in JavaScript and allows for different functionality.
 
 
 
