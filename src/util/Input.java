@@ -15,18 +15,17 @@ public class Input {
     }
     public String getString(String input){
         System.out.println(input);
-        System.out.println("Enter text");
         return sc.next();
     }
 
 
 
     public boolean yesNo(){
-        System.out.print("Enter [y], [Y], [yes] or [Yes]");
+        System.out.printf("[Y]es / [N]o%n");
         return (sc.next().trim().equalsIgnoreCase("Y") || sc.next().trim().equalsIgnoreCase("yes"));
     }
     public boolean yesNo(String input){
-        System.out.print(input);
+        System.out.printf("%s%n", input);
         return (sc.next().trim().equalsIgnoreCase("Y") || sc.next().trim().equalsIgnoreCase("yes"));
     }
 
@@ -48,12 +47,10 @@ public class Input {
             System.out.println("Not within range");
             return getInt(min, max);
         }
-        System.out.println("Valid");
         return currInput;
     }
 
     public int getInt(){
-        System.out.println("Enter a number");
         return sc.nextInt();
     }
 
