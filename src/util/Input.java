@@ -65,25 +65,44 @@ public class Input {
         String input = this.getString();
         try{
             Integer.valueOf(input);
+            return Integer.valueOf(input);
         } catch (Exception e){
             System.out.println("Invalid Input detected");
             e.printStackTrace();
+            return getInt();
         }
-        return Integer.valueOf(input);
     }
 
+
+
+
+    public double getDouble(){
+        String testDouble = this.getString();
+        try{
+            Double.valueOf(testDouble);
+            return Double.valueOf(testDouble);
+        } catch (Exception e){
+            System.out.println("Invalid Input Detected");
+            e.printStackTrace();
+            return getDouble();
+        }
+    }
 
 
     public BigInteger getBinary(){
         String binStr = this.getString();
         try{
             new BigInteger(binStr, 2);
+            return new BigInteger(binStr, 2);
         } catch (Exception e){
             System.out.println("Unable to parse");
             e.printStackTrace();
+            return getBinary();
         }
-        return new BigInteger(binStr, 2);
     }
+
+
+
 
 
     public int getHex(){
@@ -127,16 +146,7 @@ public class Input {
         return currDouble;
     }
 
-    public double getDouble(){
-        String testDouble = this.getString();
-        try{
-            Double.valueOf(testDouble);
-        } catch (Exception e){
-            System.out.println("Invalid Input Detected");
-            e.printStackTrace();
-        }
-        return Double.valueOf(testDouble);
-    }
+
 
 
 
