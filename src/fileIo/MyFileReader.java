@@ -1,7 +1,13 @@
 package fileIo;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MyFileReader {
@@ -21,6 +27,63 @@ public class MyFileReader {
     // Constructor
     //      want to send in a directory path name, and a logFile name a file name, and generate EVERYTHING from just those two values
 
+    public MyFileReader(String directoryName, String fileName, String logFileName) throws IOException {
+        this.directoryName = directoryName;
+        this.fileName = fileName;
+        this.logFileName = logFileName;
+        // Instantiating Path values
+        this.directoryPath = Paths.get(directoryName); // Paths.get( " data " )
+        this.filePath = Paths.get(directoryName, fileName); // the directoryName is the path to where you are placing the file in
+        this.logFilePath = Paths.get(directoryName, logFileName);
+
+        // check if the files exist and create them if they do not
+        // create a log file to have your error catching log to in case of a program crash
+
+        //Log file
+        if (Files.notExists(this.logFilePath)){
+            try{
+                //try to create the file as it apparently does not exist
+                Files.createFile(this.logFilePath);
+
+            }catch (IOException e) { // generated from the more options of the createFile method above
+                //Store this exception in the log file ( but it does not exist yet )
+                // if there is an issue creating the log file, crash the party and throw an IOException
+                throw new IOException("Unable to create the logfile (" + this.logFileName + ")!");
+
+            }
+        }
+
+        // Directory for data file ( "data" ), ("src/fileIo")
+        if(Files.notExists(this.directoryPath)){
+            try{
+                Files.createDirectories(this.directoryPath);// createDirector i e s plural to then create any or all possible directories needed for path
+            } catch (IOException e){
+                //Add this error e to the log, it is created as this is happening after the first if above to create the log path
+                // files.write ( path object, list < string > of message(s) for file, appendOption (add stuff to the file rather than overwrite))
+                Files.write(this.logFilePath, Arrays.asList(e.getMessage()), StandardOpenOption.APPEND);
+
+                // stop the process, crash the party
+                throw new IOException("Unable to create the data directory (" + this.directoryName + ")!");
+            }
+        }
+
+        // Data file (day18.txt)
+        if(Files.notExists(this.filePath)){
+            try{
+                Files.createFile(this.filePath); // src/day18.txt
+            } catch(IOException e){
+                Files.write(this.logFilePath, Arrays.asList(e.getMessage()), StandardOpenOption.APPEND); // append the error
+
+                throw new IOException("Unable to create the data file (" + this.fileName+ ")!");
+            }
+        }
+
+        // see what we did here with some souts => test if the instantiation works
+        System.out.println(filePath); // display the file path for the passed in arguments
+        this.fileLines = Files.readAllLines(this.filePath); // this will give every line in the day18.txt, for example,
+        // as a String in a List<String>
+        // can then use the getter on the newly created object and thisFileReader.getFileLines() to return it
+    }
 
 
 
@@ -28,8 +91,25 @@ public class MyFileReader {
 
 
 
-    //PSVM
 
+
+    //PSVM ( you can think of this as being 20 files away from this file - it is STATIC )
+    public static void main(String[] args) throws IOException {
+        // instantiate a file reader object, and see if it works
+
+        MyFileReader thisFileReader = new MyFileReader("src/data", "day18.txt", "day18Log.txt");
+
+        thisFileReader.writeToLog("Successfully read the " + thisFileReader.getFileName() + " file!"); //using the new method to easily write to the log
+
+        System.out.println("day18 file, here is the first line from the list");
+        System.out.println(thisFileReader.getFileLines().get(0));
+
+        // set up a new file reader object with different values to access the "jolts.txt" file
+        MyFileReader joltsReader = new MyFileReader("src/fileIo", "jolts.txt", "joltsLog.txt");
+
+
+
+    }
 
 
 
@@ -37,6 +117,17 @@ public class MyFileReader {
 
 
     // CUSTOM METHODS
+    // to be able to easily write a message to the log without all this nested method calling
+
+    public void writeToLog(String message) throws IOException {
+        try{
+            //write the string message to the log file of This Instance of the File reader object that is instantiated
+            Files.write(this.logFilePath, Arrays.asList(message), StandardOpenOption.APPEND);
+        }catch(IOException e){
+            Files.write(this.logFilePath, Arrays.asList(e.getMessage()), StandardOpenOption.APPEND);
+             throw new IOException("Unable to write custom message " + message+ " to log file");
+        }
+    }
 
 
 
