@@ -1,5 +1,6 @@
 package util;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Input {
@@ -50,9 +51,54 @@ public class Input {
         return currInput;
     }
 
+//    public int getInt(){
+//        return sc.nextInt();
+//    }
+
+
+
+
+
+
+
     public int getInt(){
-        return sc.nextInt();
+        String input = this.getString();
+        try{
+            Integer.valueOf(input);
+        } catch (Exception e){
+            System.out.println("Invalid Input detected");
+            e.printStackTrace();
+        }
+        return Integer.valueOf(input);
     }
+
+
+
+    public BigInteger getBinary(){
+        String binStr = this.getString();
+        try{
+            new BigInteger(binStr, 2);
+        } catch (Exception e){
+            System.out.println("Unable to parse");
+            e.printStackTrace();
+        }
+        return new BigInteger(binStr, 2);
+    }
+
+
+    public int getHex(){
+        // will figure this out
+        return 0;
+    }
+
+
+
+
+
+
+
+
+
 
     public int getInt(String prompt){
         System.out.println(prompt);
@@ -82,8 +128,14 @@ public class Input {
     }
 
     public double getDouble(){
-        System.out.println("Enter a number of type double");
-        return sc.nextDouble();
+        String testDouble = this.getString();
+        try{
+            Double.valueOf(testDouble);
+        } catch (Exception e){
+            System.out.println("Invalid Input Detected");
+            e.printStackTrace();
+        }
+        return Double.valueOf(testDouble);
     }
 
 
