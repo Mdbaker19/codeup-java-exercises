@@ -17,6 +17,7 @@ public class ExceptionsLec {
 
 //        String[] days = {"Monday", "Tuesday", "Wednesday"};
 //        System.out.println(days[4]); //ArrayIndexOutOfBoundsException
+//        System.out.println("this will not run ^^ that is not in an exception");
 
 
         // TODO: Try/Catch with days array
@@ -29,12 +30,15 @@ public class ExceptionsLec {
 //            //if that code throws an error, catch it here, and do something!
 //            System.out.println("There is an out of bounds exception with our days array!");
 //            e.printStackTrace(System.out);
-////            e.printStackTrace();
+//            e.printStackTrace();
 //        } catch (Exception e){
 //            System.out.println("General Exception");
 //            e.printStackTrace();
 //        }
+//        System.out.println("this will still run when there is a try catch block");
 
+
+        // try and save a user with their info and if not throw an error in the catch
 
 
 
@@ -68,11 +72,15 @@ public class ExceptionsLec {
 
 
         try {
-//            throw new Exception("Something went wrong"); // Generally wrong - last catch
-
+//            throw new Exception("Something went wrong"); // Generally wrong - last catch in the general Exception catch need e.getMessage();
+//
 //            throw new NullPointerException("Something went wrong message"); // Something went wrong message
-
+//
 //            throw new ArrayIndexOutOfBoundsException(); //Runtime exception happened
+
+//            int x = 4;
+//            x/=0;
+//            System.out.println(x);//RuntimeException
 
 
         } catch(NullPointerException e) {
@@ -121,7 +129,8 @@ public class ExceptionsLec {
         /* ******************************************************** */
         /* ******************* CALLING A METHOD ******************* */
         /* ******************************************************** */
-//        thisHandlesAnException();
+//        thisHandlesAnException();//forcing a general exception in the try block of the method
+        //
 
 
 
@@ -131,10 +140,10 @@ public class ExceptionsLec {
         /* ******************************************************** */
         /* *********** TRY/CATCH VS METHOD SIGNATURE ************** */
         /* ******************************************************** */
-
+//
 //        String indentationPreference;
-
-
+//
+//
 //        try {
 //            indentationPreference = getIndentationPreference();
 //            System.out.println("Okay, " + indentationPreference + " is a great choice.");
@@ -143,8 +152,8 @@ public class ExceptionsLec {
 //            System.out.println("Here is some more detail:");
 //            e.printStackTrace();
 //        }
-
-//        String indentationPreference = getIndentationPreference();
+//
+//        indentationPreference = getIndentationPreference();
 //        System.out.println("Okay, " + indentationPreference + " is a great choice.");
     }
 
