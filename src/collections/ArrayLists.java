@@ -17,24 +17,24 @@ public class ArrayLists {
         numbers.add(11);
         numbers.add(11);
 
-        System.out.println(numbers.remove(Integer.valueOf(10)));// interesting. how to determine what it is wanting
+//        System.out.println(numbers.remove(Integer.valueOf(10)));// interesting. how to determine what it is wanting
 
         // prints out ArrayList
-        System.out.println(numbers);
+//        System.out.println(numbers);
 
         // return length of the ArrayList with .size()
-        System.out.println(numbers.size());
+//        System.out.println(numbers.size());
 
         // return an element at the specified index
-        System.out.println(numbers.get(1));
+//        System.out.println(numbers.get(1));
 
         // returns index position of found element, -1 if not found.
-        System.out.println(numbers.indexOf(11));
-        System.out.println(numbers.indexOf(20));
+//        System.out.println(numbers.indexOf(11));
+//        System.out.println(numbers.indexOf(20));
 
         // TODO: Add a new Integer to the numbers ArrayList at index 1.
         numbers.add(1, 11);
-        System.out.println(numbers);
+//        System.out.println(numbers);
 
         ArrayList<String> roasts = new ArrayList<>();
         roasts.add("light");
@@ -46,21 +46,23 @@ public class ArrayLists {
         roasts.add("medium");
 
         System.out.println(roasts);
+        roasts.remove("light");
+        System.out.println(roasts);
 
         // .contains returns a boolean value based on whether or not a searched value exists in the ArrayList
-        System.out.println(roasts.contains("dark"));
+//        System.out.println(roasts.contains("dark"));
         // TODO: Check if the roasts list contains "espresso"
 
         // returns the last occurrence of a given value
         // TODO: Find the last "medium" roast in the list.
-        System.out.println(roasts.lastIndexOf("medium"));
+//        System.out.println(roasts.lastIndexOf("medium"));
 
         // TODO: How could we check if the roasts list is empty?
         // TODO: Remove one medium roast from the list. If there are duplicate strings in the list, which one is removed first?
         // TODO: Remove the element at index 4. Note the return value here vs. the previous remove method.
         // BONUS TODO: How can we get the list of roasts in alphabetical order?
         Collections.sort(roasts);
-        System.out.println(roasts);
+//        System.out.println(roasts);
 
 //      roasts.sort(String::compareTo) — this also sorts alphabetically without using Collections
 
